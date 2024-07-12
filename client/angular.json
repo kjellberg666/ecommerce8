@@ -98,9 +98,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/scss/bootstrap",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker",
-              "./node_modules/font-awesome/scss/font-awesome",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss"
             ],
             "scripts": []
