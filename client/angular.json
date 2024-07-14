@@ -30,12 +30,23 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+             "production": {
+              "fileReplacements": [
+               {
+                 "replace": "src/environments/environment.ts",
+                 "with": "src/environments/environment.development.ts"
+               }
+             ],
               "budgets": [
                 {
                   "type": "initial",
@@ -98,10 +109,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
-              "node_modules/font-awesome/scss/font-awesome.scss",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss"
             ],
             "scripts": []
