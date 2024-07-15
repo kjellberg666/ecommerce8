@@ -4,6 +4,10 @@ $primary: #900;
 $enable-shadows: true;
 $prefix: "mo-";
 
+label.xng-breadcrumb-trail {
+    color: orange;
+}
+
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons';
@@ -11,3 +15,4 @@ $prefix: "mo-";
 @import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss";
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 @import "../node_modules/ngx-toastr/toastr.css";
+@import "../node_modules/bootswatch/dist/united/bootstrap.min.css";
