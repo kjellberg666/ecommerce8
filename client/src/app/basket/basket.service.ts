@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../shared/models/product';
+import { DeliveryMethod } from '../shared/models/deliveryMethod';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,14 @@ export class BasketService {
   basketSource$ = this._basketSource.asObservable();
   private _basketTotalSource = new BehaviorSubject<BasketTotals | null>(null);
   basketTotalSource$ = this._basketTotalSource.asObservable();
+  shipping = 0;
 
   constructor(private http:HttpClient) { }
+
+  setShippingPrice(deliveryMethod: DeliveryMethod) {
+    this.shipping = deliveryMethod.price;
+    this._calculateTotals();
+  }
 
   getBasket(id: string) {
     return this.http.get<Basket>(this.baseUrl + 'basket?id=' + id).subscribe({
@@ -70,11 +77,15 @@ export class BasketService {
   deleteBasket(basket: Basket) {
     return this.http.delete(this.baseUrl + 'basket?id=' + basket.id).subscribe({
       next: () => {
-        this._basketSource.next(null);
-        this._basketTotalSource.next(null);
-        localStorage.removeItem('basket_id');
+        this.deleteLocalBasket();
       }
     })
+  }
+
+  deleteLocalBasket() {
+    this._basketSource.next(null);
+    this._basketTotalSource.next(null);
+    localStorage.removeItem('basket_id');
   }
 
   private _addOrUpdateItems(items: BasketItem[], itemToAdd: BasketItem, quantity: number): BasketItem[] {
@@ -111,10 +122,9 @@ export class BasketService {
     if (!basket) {
       return;
     }
-    const shipping = 0;
     const subtotal = basket.items.reduce((a, b) => (b.price * b.quantity) + a, 0);
-    const total = subtotal + shipping;
-    this._basketTotalSource.next({shipping, total, subtotal});
+    const total = subtotal + this.shipping;
+    this._basketTotalSource.next({shipping: this.shipping, total, subtotal});
   }
 
   private _isProduct(item: Product | BasketItem): item is Product {
