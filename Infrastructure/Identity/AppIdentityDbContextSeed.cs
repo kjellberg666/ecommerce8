@@ -14,6 +14,7 @@ namespace Infrastructure.Identity
                     DisplayName = "Öykü",
                     Email = "oyku.yener99@gmail.com",
                     UserName = "oyku.yener",
+                    Role = "Admin",
                     Address = new Address
                     {
                         FirstName = "Öykü",

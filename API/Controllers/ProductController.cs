@@ -79,5 +79,19 @@ namespace API.Controllers
         public async Task<ActionResult<IReadOnlyList<ProductType>>>GetProductTypes(){
             return Ok(await _productTypeRepo.ListAllAsync());
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ProductToReturnDto>> DeleteProduct(int id){
+
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+            var product = await _productsRepo.GetEntityWithSpec(spec);
+
+            if (product == null) return NotFound(new ApiResponse(404));
+
+            _productsRepo.Delete(product);
+
+            return _mapper.Map<Product, ProductToReturnDto>(product);
+        }
     }
 }

@@ -1,7 +1,8 @@
 <div class="form-floating mb-3">
     <input 
     type={{type}}
-    [formControl]="control" 
+    [formControl]="control"
+    [readOnly]="readonly"
     class="form-control"
     [ngClass]="(control.touched) ? control.invalid ? 'is-invalid' : 'is-valid' : null"
     placeholder="{{label}}">
