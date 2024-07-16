@@ -1,7 +1,7 @@
 [
   {
     "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "Price": 200,
     "PictureUrl": "images/products/sb-ang1.png",
     "ProductTypeId": 1,
@@ -33,7 +33,7 @@
   },
   {
     "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "Price": 250,
     "PictureUrl": "images/products/sb-react1.png",
     "ProductTypeId": 1,
@@ -113,7 +113,7 @@
   },
   {
     "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Description": "Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 189.99,
     "PictureUrl": "images/products/boot-core2.png",
     "ProductTypeId": 3,
